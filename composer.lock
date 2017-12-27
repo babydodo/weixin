@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "96bcd5db92f4b3cff68264129f401f8b",
+    "content-hash": "92b680a61b817e6f59438f6b17e8b557",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -2737,6 +2737,50 @@
                 "mailer"
             ],
             "time": "2017-11-23T14:49:29+00:00"
+        },
+        {
+            "name": "yiidoc/yii2-redactor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiidoc/yii2-redactor.git",
+                "reference": "9848704a8bef370a0f09f3be0dd7a052d5ad3d32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiidoc/yii2-redactor/9848704a8bef370a0f09f3be0dd7a052d5ad3d32.zip",
+                "reference": "9848704a8bef370a0f09f3be0dd7a052d5ad3d32",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii\\redactor\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nghia Nguyen",
+                    "email": "zinzinday@gmail.com"
+                }
+            ],
+            "description": "Extension redactor for Yii2 Framework.",
+            "keywords": [
+                "Redactor",
+                "extension",
+                "html editor",
+                "imperavi",
+                "wysiwyg",
+                "yii2"
+            ],
+            "time": "2016-01-07T06:45:09+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -5518,7 +5562,8 @@
     "stability-flags": {
         "phpoffice/phpexcel": 20,
         "dmstr/yii2-adminlte-asset": 20,
-        "shmilyzxt/yii2-kartikcrud": 20
+        "shmilyzxt/yii2-kartikcrud": 20,
+        "yiidoc/yii2-redactor": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

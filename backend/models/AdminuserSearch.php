@@ -1,16 +1,16 @@
 <?php
 
-namespace backend\controllers;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\User;
+use common\models\Adminuser;
 
 /**
- * common\models\User 模型的表单搜索查询类.
+ * common\models\Adminuser 模型的表单搜索查询类.
  */
-class UserSearch extends User
+class AdminuserSearch extends Adminuser
 {
     /**
      * @inheritdoc
@@ -39,7 +39,7 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find();
+        $query = Adminuser::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use backend\models\ResetpwdForm;
+use backend\models\UserSearch;
 use common\models\SignupForm;
 use common\models\User;
 use Yii;
@@ -206,7 +207,7 @@ class UserController extends Controller
      * 删除记录 User (从列表删除，删除后刷新列表页面).
      * @param integer $id
      * @return mixed
-     * @throws \Exception
+     * @throws \yii\base\Exception
      */
     public function actionDelete($id)
     {

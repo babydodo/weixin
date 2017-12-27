@@ -10,7 +10,13 @@ return [
         // yii2-admin插件配置
         'admin'       => [
             'class'  => 'mdm\admin\Module',
-//            'layout' => false
+        ],
+        // 富文本编辑器redactor
+        'redactor' => [
+            'class' => 'common\components\RedactorModule',
+            'uploadDir' => '@webroot/uploads',
+            'uploadUrl' => '@web/uploads',
+            'imageAllowExtensions'=>['jpg', 'png', 'gif'],
         ],
 
         // gii配置
@@ -76,14 +82,15 @@ return [
 
         'urlManager' => [
             // 是否开启URL美化功能
-            'enablePrettyUrl' => true,
+//            'enablePrettyUrl' => true,
             // 是否启用严格解析
-            'enableStrictParsing' => false,
+            'enableStrictParsing' => true,
             // 是否在URL中显示入口脚本index.php
-            'showScriptName' => false,
+            'showScriptName' => true,
             // 指定续接在URL后面的后缀，如.html
-            'suffix' => '',
+//            'suffix' => '',
             'rules' => [
+//                '<controllers:\w+>/redactor' => '/redactor/upload/image',
                 "<controller:\w+>/<id:\d+>"=>"<controller>/view",
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"
             ],

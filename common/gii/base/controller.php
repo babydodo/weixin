@@ -96,8 +96,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      */
     public function actionView(<?= $actionParams ?>)
     {   
-        $request = Yii::$app->request;
-        if($request->isAjax) {
+        if(Yii::$app->request->isAjax) {
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
                 'title'   => "<?= $modelClass ?> #".<?= $actionParams ?>,
@@ -204,10 +203,9 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      */
     public function actionDelete(<?= $actionParams ?>)
     {
-        $request = Yii::$app->request;
         $this->findModel(<?= $actionParams ?>)->delete();
 
-        if($request->isAjax){
+        if(Yii::$app->request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
                 'forceClose'  => true,

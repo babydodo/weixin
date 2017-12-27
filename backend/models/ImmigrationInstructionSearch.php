@@ -1,16 +1,15 @@
 <?php
 
-namespace backend\controllers;
+namespace backend\models;
 
-use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Classroom;
+use common\models\ImmigrationInstruction;
 
 /**
- * common\models\Classroom 模型的表单搜索查询类.
+ * common\models\ImmigrationInstruction 模型的表单搜索查询类.
  */
-class ClassroomSearch extends Classroom
+class ImmigrationInstructionSearch extends ImmigrationInstruction
 {
     /**
      * @inheritdoc
@@ -18,8 +17,8 @@ class ClassroomSearch extends Classroom
     public function rules()
     {
         return [
-            [['id', 'type', 'amount'], 'integer'],
-            [['number', 'name'], 'safe'],
+            [['id', 'sort', 'created_at', 'updated_at'], 'integer'],
+            [['country_name', 'image', 'content'], 'safe'],
         ];
     }
 
@@ -39,10 +38,14 @@ class ClassroomSearch extends Classroom
      */
     public function search($params)
     {
-        $query = Classroom::find();
+        $query = ImmigrationInstruction::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                //设置默认排序
+                'defaultOrder' => ['sort' => SORT_DESC, 'updated_at'=>SORT_DESC],
+            ]
         ]);
 
         $this->load($params);
@@ -55,12 +58,12 @@ class ClassroomSearch extends Classroom
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'type' => $this->type,
-            'amount' => $this->amount,
+            'sort' => $this->sort,
         ]);
 
-        $query->andFilterWhere(['like', 'number', $this->number])
-            ->andFilterWhere(['like', 'name', $this->name]);
+        $query->andFilterWhere(['like', 'country_name', $this->country_name])
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;
     }
