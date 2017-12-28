@@ -17,8 +17,8 @@ class ImmigrationInstructionSearch extends ImmigrationInstruction
     public function rules()
     {
         return [
-            [['id', 'sort', 'created_at', 'updated_at'], 'integer'],
-            [['country_name', 'image', 'content'], 'safe'],
+            [['id', 'sort'], 'integer'],
+            [['country_name', 'image', 'content', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 

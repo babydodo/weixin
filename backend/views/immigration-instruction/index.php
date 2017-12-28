@@ -87,12 +87,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'sort',
                     // 'label'  => 'sort',
                 ],
-//                [
-//                    'attribute' => 'created_time',
-//                ],
-//                [
-//                    'attribute'=>'updated_time',
-//                ],
+                'created_at:datetime',
+                'updated_at:datetime',
 
                 // 动作列按钮设定
                 [

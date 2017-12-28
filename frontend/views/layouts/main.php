@@ -18,7 +18,7 @@ AppAsset::register($this);
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
 
-    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
 
     <?php $this->head() ?>
 </head>

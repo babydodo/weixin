@@ -135,7 +135,6 @@ class ImmigrationInstructionController extends Controller
         if(Yii::$app->request->isPost) {
             $model->setScenario('update');
             $image = $model->image; // 临时保存image的值
-            $model->load(Yii::$app->request->post());
 
             // 如果有文件上传
             if(!empty($_FILES['ImmigrationInstruction']['name']['image'])) {
@@ -149,13 +148,12 @@ class ImmigrationInstructionController extends Controller
                 if($model->image->saveAs($dir)) {
                     // 删除旧的图片
                     @unlink('../../upload/immigration/'.$image);
+                    $image = $fileName;
                 };
-                $model->image = $fileName;
-
-            } else {
-                $model->image = $image;
             }
 
+            $model->load(Yii::$app->request->post());
+            $model->image = $image;
             if ($model->save()) {
                 Yii::$app->getSession()->setFlash('info', '更新成功...');
                 return $this->redirect(['index']);

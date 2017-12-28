@@ -27,9 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'country_name')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'image')->widget(FileInput::classname(), [
-                'options' => ['multiple' => false],
+                'options' => ['multiple' => false,],
                 'pluginOptions' => [
-                    'showUpload' => false,
+                    'showUpload' => false, // 是否显示上传按钮
+                    'msgPlaceholder' => '请选择640*426像素图片文件',
                 ]
             ]) ?>
 

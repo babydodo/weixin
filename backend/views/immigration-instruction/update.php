@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'previewFileType' => 'image',
                     // 预览的文件
                     'initialPreview' => \yii\helpers\Url::to('@upload/immigration/').$model->image,
+                    'msgPlaceholder' => '请选择640*426像素图片文件',
                 ]
             ]) ?>
 
